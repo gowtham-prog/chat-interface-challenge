@@ -20,7 +20,8 @@ export function MessageBubble({ message }: MessageBubbleProps) {
                 <p className="text-sm">
                     <ReactMarkdown>{message.content}</ReactMarkdown>
                 </p>
-                <span className="text-xs opacity-70 mt-1 block">
+
+                {isAssistant && <span className="text-xs opacity-70 mt-1 block">
                     {new Date(message.timestamp).toLocaleDateString('en-US', {
                         month: 'short',
                         day: 'numeric',
@@ -29,7 +30,7 @@ export function MessageBubble({ message }: MessageBubbleProps) {
                         minute: '2-digit',
                         hour12: true
                     })}
-                </span>
+                </span>}
             </div>
         </div>
     )

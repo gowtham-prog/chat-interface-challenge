@@ -8,7 +8,7 @@ import { sendMessage, addMessage, setTyping } from "../store/chatSlice"
 import type { RootState } from "../store/store"
 import type { Message } from "../store/types"
 import { useAppDispatch } from "../store/store"; 
-
+import { Button } from "@/components/ui/button"
 
 export function Chat() {
     const dispatch = useAppDispatch();
@@ -22,15 +22,15 @@ export function Chat() {
             sender: "user",
         };
 
-        dispatch(addMessage(newMessage)); // Add user message
-        dispatch(setTyping(true)); // Show typing indicator
+        dispatch(addMessage(newMessage));
+        dispatch(setTyping(true));
 
         try {
-            await dispatch(sendMessage(content)).unwrap(); // ✅ Ensure action is correctly structured
+            await dispatch(sendMessage(content)).unwrap();
         } catch (error) {
             console.error("Error sending message:", error);
         } finally {
-            dispatch(setTyping(false)); // Remove typing indicator
+            dispatch(setTyping(false)); 
         }
     };
 
