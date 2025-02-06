@@ -65,14 +65,14 @@ docker build -t chat-app .
 
 ### **2️⃣ Run the Container**
 ```sh
-docker run -p 4173:4173 chat-app
+docker run -p 3000:3000 chat-app
 ```
-The app will be available at `http://localhost:4173`.
+The app will be available at `http://localhost:3000`.
 
 ### **3️⃣ Using Docker Compose (Optional)**
 If you prefer **Docker Compose**, you can use:
 ```sh
-docker-compose up -d
+docker-compose up --build
 ```
 This will automatically build and start the container.
 

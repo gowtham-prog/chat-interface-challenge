@@ -1,6 +1,5 @@
 import { createSlice, createAsyncThunk, type PayloadAction } from "@reduxjs/toolkit"
 import type { ChatState, Message } from "../types/chat"
-// import { processMessage } from "../services/chat"
 import { sendMessageToClaude } from '../services/claudeApi';
 
 const initialState: ChatState = {

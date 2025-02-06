@@ -10,12 +10,11 @@ const client = new Anthropic({
 export async function sendMessageToClaude(message: string): Promise<string> {
     try {
         const response = await client.messages.create({
-            model: 'claude-3-5-sonnet-20241022', // Ensure this model version is correct
+            model: 'claude-3-5-sonnet-20241022',
             messages: [{ role: 'user', content: message }],
             max_tokens: 1024,
         });
 
-        // Extract the text content from the response
         if (response && response.content && response.content.length > 0) {
             const textContent = response.content
                 .filter((item: any) => item.type === 'text')

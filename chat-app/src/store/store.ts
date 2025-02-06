@@ -8,9 +8,8 @@ export const store = configureStore({
     }
 });
 
-// Define RootState and AppDispatch types
 export type RootState = ReturnType<typeof store.getState>;
 export type AppDispatch = typeof store.dispatch;
 
-// Custom hook to use typed dispatch
+
 export const useAppDispatch: () => AppDispatch = useDispatch;
